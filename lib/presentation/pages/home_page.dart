@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:futbit_bloc/cubit/group_cubit.dart';
 import 'package:futbit_bloc/repositories/GroupRepository.dart';
 import 'package:futbit_bloc/services/group_api_service.dart';
 import 'package:http/http.dart' as http;
@@ -20,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   _fetchGroups() {
-    GroupRepository(groupApiService: GroupApiService(httpClient: http.Client())).fetchGroups();
+    // context.read<GroupCubit>().fetchGroups();
   }
 
   @override

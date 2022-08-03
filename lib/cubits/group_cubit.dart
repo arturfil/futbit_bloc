@@ -21,6 +21,7 @@ class GroupCubit extends Cubit<GroupState> {
         status: GroupStatus.error,
         error: e
       ));
+      print('state: $state');
     }
   }
 }

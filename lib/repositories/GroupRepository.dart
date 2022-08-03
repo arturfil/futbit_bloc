@@ -10,7 +10,7 @@ class GroupRepository {
 
   Future<List<dynamic>> fetchGroups() async {
     try {
-      final List<Group> groups = await groupApiService.getGroups();
+      final List<dynamic> groups = await groupApiService.getGroups();
       print('groups: $groups');
       return groups;
       

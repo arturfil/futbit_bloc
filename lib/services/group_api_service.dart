@@ -12,7 +12,7 @@ class GroupApiService {
   final http.Client httpClient;
   GroupApiService({required this.httpClient});
 
-  Future<List<Group>> getGroups() async {
+  Future<List<dynamic>> getGroups() async {
     String? apiUrl = dotenv.env['api_url'];
     var url = Uri.parse(apiUrl.toString() + '/groups');
     
