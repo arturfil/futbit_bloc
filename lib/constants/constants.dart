@@ -1,0 +1,1 @@
+const String apiHost = 'localhost:8080/api';
