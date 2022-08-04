@@ -16,7 +16,6 @@ class Group extends Equatable {
 
   factory Group.fromJson(Map<String, dynamic> json) {
     final group = json['group'][0];
-    final main = json['main'];
 
     return Group(
       id: group['id'],

@@ -1,10 +1,9 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 
 import 'group.dart';
 
 class GroupList extends Equatable {
-  final List<Group> groups;
+  final List<dynamic> groups;
 
   GroupList({
     required this.groups,
@@ -12,7 +11,9 @@ class GroupList extends Equatable {
 
   factory GroupList.fromJson(Map<String, dynamic> json) {
     final groups = json['groups'][0];
-    print("IN GROUPLILST CLASS -> " + groups);
+    print("TEST -> " + json.toString());
+    var groupsToReturn = GroupList(groups: groups);
+    print("IN GROUPLILST CLASS -> " + groupsToReturn.toString());
     return GroupList(groups: groups);
   }
 

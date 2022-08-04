@@ -1,13 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:futbit_bloc/constants/constants.dart';
 import 'package:futbit_bloc/exceptions/exception.dart';
 import 'package:futbit_bloc/models/GroupLIst.dart';
-import 'package:futbit_bloc/services/http_error_handler.dart';
 import 'package:http/http.dart' as http;
 
-import '../models/group.dart';
 
 class GroupApiService {
   final http.Client httpClient;
@@ -28,9 +25,10 @@ class GroupApiService {
       if (response.statusCode != 200) {
         throw GroupApiException();
       }
-      // this works
+      // Uncomment this to see how the api works
       // print("response -> " + responseJson['groups'].toString());
-      return responseJson['groups'];
+      // var 
+      return GroupList(groups: responseJson['groups']);
     } catch (e) {
       rethrow;
     }

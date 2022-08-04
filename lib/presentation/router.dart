@@ -3,7 +3,7 @@ import 'package:futbit_bloc/presentation/pages/add_group_page.dart';
 import 'package:futbit_bloc/presentation/pages/home_page.dart';
 
 Route<dynamic> generateRoute(RouteSettings setting) {
-  final Map<String, dynamic> args = new Map<String, dynamic>();
+  // final Map<String, dynamic> args = new Map<String, dynamic>();
 
   switch(setting.name) {
     case "/":

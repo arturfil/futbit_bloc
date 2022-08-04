@@ -29,6 +29,7 @@ class GroupListState extends Equatable {
   @override
   List<Object> get props => [groups];
 
+
   GroupListState copyWith({
     GroupList? groups,
     CustomError? error,

@@ -10,7 +10,6 @@ class GroupRepository {
   Future<GroupList> fetchGroups() async {
     try {
       final GroupList groups = await groupApiService.getGroups();
-      print("Groups -> " + groups.toString());
       return groups;
       
     } on GroupApiException catch (e) {
