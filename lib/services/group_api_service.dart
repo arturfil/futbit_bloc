@@ -25,11 +25,11 @@ class GroupApiService {
     try {
       var response = (await http.get(url, headers: header));
       var responseJson = await json.decode(response.body);
-      print(responseJson['groups']);
       if (response.statusCode != 200) {
         throw GroupApiException();
       }
-      // final responseBody = json.decode(response.body);
+      // this works
+      // print("response -> " + responseJson['groups'].toString());
       return responseJson['groups'];
     } catch (e) {
       rethrow;

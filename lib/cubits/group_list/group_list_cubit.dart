@@ -13,11 +13,18 @@ class GroupListCubit extends Cubit<GroupListState> {
   GroupListCubit({required this.groupRepository}) : super(GroupListState.initial());
 
   Future<void> fetchGroups() async {
+    emit(state.copyWith(status: GroupListStatus.loading));
+    print("STATE " + state.groups.toString());
+    print("Outside Trey");
     try {
+      print("Inside Trey");
       final GroupList groups = await groupRepository.fetchGroups();
+      print("before emit");
       emit(state.copyWith(status: GroupListStatus.loaded, groups: groups));
-    } catch (e) {
-      
+      print("IN CUBIT-> " + groups.toString());
+      print('state $state');
+    } on CustomError catch (e) {
+      emit(state.copyWith(status: GroupListStatus.error, error: e));
     }
   }
 }

@@ -3,8 +3,6 @@ import 'package:futbit_bloc/models/GroupLIst.dart';
 import 'package:futbit_bloc/models/custom_error.dart';
 import 'package:futbit_bloc/services/group_api_service.dart';
 
-import '../models/group.dart';
-
 class GroupRepository {
   final GroupApiService groupApiService;
   GroupRepository({required this.groupApiService});
@@ -12,7 +10,7 @@ class GroupRepository {
   Future<GroupList> fetchGroups() async {
     try {
       final GroupList groups = await groupApiService.getGroups();
-      print('groups: $groups');
+      print("Groups -> " + groups.toString());
       return groups;
       
     } on GroupApiException catch (e) {

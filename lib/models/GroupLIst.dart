@@ -12,7 +12,7 @@ class GroupList extends Equatable {
 
   factory GroupList.fromJson(Map<String, dynamic> json) {
     final groups = json['groups'][0];
-
+    print("IN GROUPLILST CLASS -> " + groups);
     return GroupList(groups: groups);
   }
 
@@ -21,9 +21,6 @@ class GroupList extends Equatable {
   @override
   List<Object> get props => [groups];
 
-  @override
-  bool get stringify => true;
-
   GroupList copyWith({
     List<Group>? groups,
   }) {
@@ -31,4 +28,7 @@ class GroupList extends Equatable {
       groups: groups ?? this.groups,
     );
   }
+
+  @override
+  bool get stringify => true;
 }

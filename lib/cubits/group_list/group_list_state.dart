@@ -18,7 +18,6 @@ class GroupListState extends Equatable {
     required this.error
   });
   
-
   factory GroupListState.initial() {
     return GroupListState(
       status: GroupListStatus.initial,
@@ -29,7 +28,6 @@ class GroupListState extends Equatable {
 
   @override
   List<Object> get props => [groups];
-
 
   GroupListState copyWith({
     GroupList? groups,
@@ -42,4 +40,7 @@ class GroupListState extends Equatable {
       status: status ?? this.status,
     );
   }
+
+  @override
+  bool get stringify => true;
 }
